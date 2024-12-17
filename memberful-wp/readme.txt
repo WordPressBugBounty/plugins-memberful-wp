@@ -2,9 +2,9 @@
 Contributors: drewstrojny, jakememberful, julianmemberful, lucasmemberful, patrikmemberful
 Tags: membership, subscriptions, paywall, stripe, recurring payments, memberful, oauth, oauth 2.0, members, recurring billing
 Requires at least: 3.6
-Tested up to: 6.5
+Tested up to: 6.7
 Requires PHP: 7.0
-Stable tag: 1.74.0
+Stable tag: 1.74.1
 License: GPLv2 or later
 
 Sell memberships and restrict access to content with WordPress and Memberful.
@@ -111,9 +111,13 @@ Glad you asked! We manage development of the plugin over at the [Memberful WP Gi
 
 == Changelog ==
 
+= 1.74.1 =
+
+* Allow admins to see protected posts in search results
+
 = 1.74.0 =
 
-* Exclude protected posts from search results
+* Exclude protected posts from search results if the user doesn't have access to those posts
 * Improve teaser generation for global marketing content
 
 = 1.73.9 =
