@@ -36,7 +36,7 @@ abstract class Memberful_Wp_Integration_Ad_Provider_Base {
   /**
    * Initialize the hooks for the ad provider (if any).
    *
-   * Should be called from the subclass constructor after setting properties.
+   * This is run at constructor time.
    */
   public function init_hooks() {}
 
