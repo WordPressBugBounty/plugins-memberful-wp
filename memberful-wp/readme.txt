@@ -1,10 +1,10 @@
 === Memberful - Membership Plugin ===
 Contributors: drewstrojny, jakememberful, julianmemberful, lucasmemberful, patrikmemberful
 Tags: membership, subscriptions, paywall, stripe, recurring payments, memberful, oauth, oauth 2.0, members, recurring billing
-Requires at least: 6.3
-Tested up to: 6.9.1
+Requires at least: 6.6
+Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.81.2
+Stable tag: 1.82.0
 License: GPLv2 or later
 
 Sell memberships and restrict access to content with WordPress and Memberful.
@@ -111,6 +111,22 @@ Glad you asked! We manage development of the plugin over at the [Memberful WP Gi
 19. View membership information
 
 == Changelog ==
+
+= 1.82.0 =
+
+* Add a visual paywall builder
+* Add a setting for how many paragraphs show before the paywall
+* Add a metered paywall with free article limits
+* Add a countdown block for metered articles
+* Add Memberful visibility settings to Beaver Builder rows, columns, and modules
+* Add WP Recipe Maker support for locking recipe cards in protected posts
+* Keep subsite administrators' roles on multisite
+* Fix Beaver Builder layouts not rendering after a protected post
+* Fix the comments feed on sites with no protected posts
+* Hide comments on term-protected posts from comment feeds
+* Hide term-protected pages and custom post types from search results
+* Stop passing Memberful connection settings to the block editor
+* Require WordPress 6.6 or later
 
 = 1.81.2 =
 

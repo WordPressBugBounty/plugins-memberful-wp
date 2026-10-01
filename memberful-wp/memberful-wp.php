@@ -3,14 +3,16 @@
 Plugin Name: Memberful - Membership Plugin
 Plugin URI: http://github.com/memberful/memberful-wp
 Description: Sell memberships and restrict access to content with WordPress and Memberful.
-Version: 1.81.2
+Version: 1.82.0
+Requires at least: 6.6
+Requires PHP: 7.4
 Author: Memberful
 Author URI: http://memberful.com
 License: GPLv2 or later
  */
 
 if ( ! defined( 'MEMBERFUL_VERSION' ) )
-  define( 'MEMBERFUL_VERSION', '1.81.2' );
+  define( 'MEMBERFUL_VERSION', '1.82.0' );
 
 if ( ! defined( 'MEMBERFUL_PLUGIN_FILE' ) )
   define( 'MEMBERFUL_PLUGIN_FILE', __FILE__ );
@@ -46,6 +48,8 @@ require_once MEMBERFUL_DIR . '/src/shortcodes.php';
 require_once MEMBERFUL_DIR . '/src/widgets.php';
 require_once MEMBERFUL_DIR . '/src/endpoints.php';
 require_once MEMBERFUL_DIR . '/src/marketing_content.php';
+require_once MEMBERFUL_DIR . '/src/paywall.php';
+require_once MEMBERFUL_DIR . '/src/metering.php';
 require_once MEMBERFUL_DIR . '/src/content_filter.php';
 require_once MEMBERFUL_DIR . '/src/search_filter.php';
 require_once MEMBERFUL_DIR . '/src/entities.php';
@@ -65,6 +69,7 @@ require_once MEMBERFUL_DIR . '/src/hide_admin_toolbar.php';
 require_once MEMBERFUL_DIR . '/src/block_dashboard_access.php';
 require_once MEMBERFUL_DIR . '/src/filter_account_menu_items.php';
 require_once MEMBERFUL_DIR . '/src/contrib/ad-providers.php';
+require_once MEMBERFUL_DIR . '/src/contrib/beaver-builder.php';
 
 if ( in_array( 'sensei/woothemes-sensei.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
   require_once MEMBERFUL_DIR . '/src/contrib/woothemes-sensei.php';
@@ -88,6 +93,10 @@ if ( in_array( 'wp-ultimate-recipe/wp-ultimate-recipe.php', apply_filters( 'acti
 
 if ( in_array( 'wp-ultimate-recipe-premium/wp-ultimate-recipe-premium.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
   require_once MEMBERFUL_DIR . '/src/contrib/wp-ultimate-recipe-premium.php';
+}
+
+if ( in_array( 'wp-recipe-maker/wp-recipe-maker.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+  require_once MEMBERFUL_DIR . '/src/contrib/wp-recipe-maker.php';
 }
 
 function memberful_wp_plugin_activate() {

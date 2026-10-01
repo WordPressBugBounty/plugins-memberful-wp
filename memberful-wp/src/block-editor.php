@@ -91,6 +91,14 @@ class Memberful_WP_Block_Editor {
         'render_callback' => 'memberful_wp_render_paywall_divider_block',
       )
     );
+
+    $countdown_directory = MEMBERFUL_DIR . '/js/build/blocks/metering-countdown';
+
+    if ( ! file_exists( $countdown_directory . '/block.json' ) ) {
+      $countdown_directory = MEMBERFUL_DIR . '/js/src/blocks/metering-countdown';
+    }
+
+    register_block_type( $countdown_directory );
   }
 
   /**
@@ -149,10 +157,27 @@ class Memberful_WP_Block_Editor {
     wp_localize_script(
       'memberful-wp-block-editor',
       'memberful_wp_block_editor',
-      array(
-        'options'                          => memberful_wp_option_values(),
-        'block_visibility_excluded_blocks' => self::get_block_visibility_excluded_blocks(),
-      )
+      self::script_data()
+    );
+  }
+
+  /**
+   * Get the data exposed to the block editor script.
+   *
+   * The block editor loads for anyone who can edit posts, so this is an
+   * explicit allow-list rather than the full option set: only the values the
+   * editor UI actually reads belong here.
+   *
+   * @return array The data exposed to the block editor script.
+   */
+  public static function script_data(): array {
+    $options = array(
+      'memberful_subscriptions' => get_option( 'memberful_subscriptions', array() ),
+    );
+
+    return array(
+      'options'                          => $options,
+      'block_visibility_excluded_blocks' => self::get_block_visibility_excluded_blocks(),
     );
   }
 
