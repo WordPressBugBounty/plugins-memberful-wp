@@ -4,7 +4,7 @@ Tags: membership, subscriptions, paywall, stripe, recurring payments, memberful,
 Requires at least: 6.6
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.82.2
+Stable tag: 1.82.3
 License: GPLv2 or later
 
 Sell memberships and restrict access to content with WordPress and Memberful.
@@ -111,6 +111,13 @@ Glad you asked! We manage development of the plugin over at the [Memberful WP Gi
 19. View membership information
 
 == Changelog ==
+
+= 1.82.3 =
+
+* Improve content protection on sites with Elementor
+* Improve content protection in the private member feed
+* Fix hiding ads for members of specific plans
+* Fix accessibility errors caused by invalid ARIA roles on link shortcodes
 
 = 1.82.2 =
 
